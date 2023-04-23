@@ -1,0 +1,538 @@
+.totalmain{
+	background-color: #242628;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+}
+.selector{
+	background-color: #18191B;
+	height: 100vh;
+	width: 20%;
+}
+.display{
+		background-color: #242628;
+	height: 100vh;
+	width: 80%;
+	position: relative;
+}
+.logo{
+	background-color: #18191B;
+	height: 100px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.icons{
+	margin: 10px;
+	width: 44px;
+    height: 80vh;
+	text-align: -webkit-center;
+	color: white;
+}
+.sections{
+	margin: 10px;
+	width: 212px;
+    height: 80vh;
+
+}
+.pick{
+	display: flex;
+}
+.newmail{
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+	background-color: #4343ffcc;
+    border: 0px;
+
+}
+.streams{
+color: blue;
+margin: 0px;
+ transition: 0.5s;
+}
+.folders{
+	color: blue;
+	margin: 0px;
+ transition: 0.5s;
+}
+.streamsopen{
+color: white;
+    height: 0px;
+    width: 14%;
+    position: absolute;
+    /* z-index: 0; */
+    top: 183px;
+    left: 74px;
+    overflow-x: hidden;
+    transition: 0.5s;
+	margin: 10px;
+}
+.streamsopen::-webkit-scrollbar {
+     display: none;
+}
+.folderopen::-webkit-scrollbar {
+     display: none;
+}
+.folderopen{
+color: white;
+    height: 0px;
+    width: 14%;
+    position: absolute;
+    z-index: 0;
+    top: 206px;
+    left: 74px;
+    overflow-x: hidden;
+    transition: 0.5s;
+	margin: 10px;
+}
+.options{
+	margin-left: 10px;
+	cursor: pointer;
+}
+.mailsec{
+ border-left: 4px solid rgb(80, 151, 255);
+}
+.divcon{
+	width: 212px;
+	color: white;
+	font-weight: bold;
+	font-size: 16px;
+
+}
+.divcon h1{
+	margin-top: 200px;
+}
+.buttonbox{
+	width: 100%;
+    height: 63px;
+    background-color: #0000002b;
+ 
+}
+.menu{
+    color: white;
+    height: 0px;
+    width: 14%;
+    position: absolute;
+    z-index: 0;
+    top: 23px;
+    left: 16px;
+    overflow-x: hidden;
+    transition: 0.5s;
+    margin: 10px;
+    background-color: black;
+	border-radius: 10px;
+
+}
+.menu::-webkit-scrollbar {
+     display: none;
+}
+.menu h1{
+	margin: 5px 10px;
+}
+.totmenu{
+	position: relative;
+	cursor: pointer;
+	margin: 0px;
+	padding-top: 1px;
+ transition: 0.5s;
+}
+.menuopt{
+margin: 19px;
+    padding-left: 16px;
+    padding-top: 8px;
+    transition: 0.5s;
+    width: 87px;
+    border-radius: 5px;
+	color: white;
+}
+
+.menuopt:hover{
+	background-color: #18191B;
+	
+}
+.aligntable{
+      width: 100%;
+    /* height: 51px; */
+    display: flex;
+    font-weight: 700;
+    color: white;
+    padding: 10px 15px;
+	border-bottom: 1px solid #ffffff30;
+
+
+}
+.align{
+	 display: grid;
+    grid-row-gap: 3px;
+    align-items: center;
+}
+.aligntable:hover{
+    background-color: #47474787;
+border-bottom: 0px solid white;
+}
+.toname{
+	width: 85px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.songname{
+	display: flex;
+}
+.mailtable{
+
+	height: 0%;
+	overflow: scroll;
+	transition: 5s;
+}
+.mailtable::-webkit-scrollbar {
+     display: none;
+}
+.songMb{
+	width: 150px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.infobox{
+	width: 100%;
+	height: 74px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding-right: 20px;
+}
+.checkboxlist{
+	width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.threedoticon{
+	--sds-c-icon-color-foreground-default: white;
+}
+.threedots{
+	position: relative;
+	width: 100%;
+}
+.dotmenu{
+	    color: white;
+    height: 0px;
+    width: 14%;
+    position: absolute;
+    z-index: 0;
+    top: 7px;
+    left: -4px;
+    overflow-x: hidden;
+    transition: 0.5s;
+    margin: 10px;
+    background-color: #0000001f;
+    border-radius: 10px;
+	display: flex;
+	justify-content: space-around;
+
+}
+.dotmenu::-webkit-scrollbar {
+     display: none;
+}
+.composemail{
+    width: 70%;
+    height: 0px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    z-index: 0;
+    bottom: 0px;
+    left: 336px;
+    overflow-x: hidden;
+    transition: 0.5s;
+ 
+
+    border-radius: 10px;
+ }
+ .composemail::-webkit-scrollbar {
+     display: none;
+}
+ .sendbtn{
+	    width: 76px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid aquamarine;
+    /* padding: 2px; */
+    padding-left: 4px;
+    padding-top: 1px;
+    margin: 18px;
+ }
+ .sendbtn:hover{
+     color: black;
+     background-color: lightskyblue;
+ }
+ .onesec{
+	 width: 100%;
+	 height: 47px;
+	 border-bottom: 1px solid blue;
+         display: flex;
+    justify-content: space-between;
+    align-items: center;
+	 
+ }
+ .toinput{
+	height: 45px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ffffff36;
+
+ }
+ .ccinput{
+     	height: 45px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ffffff36;
+ }
+ .subjectinput{
+        	height: 45px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ffffff36;
+ }
+ .datainput{
+	 width: 90%;
+     margin-left: 10px;
+ }
+.slds-input{
+    --input-color-background: rgba(255, 255, 255, 0);
+    --border-color: #ff000000;
+    color: white;
+    --input-color-background-focus: #ff000000;
+}
+.inputscontainer{
+    padding: 10px;
+}
+.frominput{
+height: 45px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ffffff36;
+    
+
+}
+.mailcontentinput{
+     padding: 10px;
+}
+.viewmailcontentinput{
+     padding: 10px;
+     height: 300px;
+     color: white;
+}
+
+.slds-textarea{
+    color: white;
+    height: 273px;
+    --textarea-color-background: #ffffff00;
+    --textarea-color-background-focus: #ffffff00;
+    --border-color: #ff000000;
+}
+.sendicon{
+        transform: rotate(-48deg);
+   padding-left: 5px;
+    --sds-c-icon-color-foreground-default: #2196F3;
+}
+.mailview{
+    height: 90%;
+    width: 0%;
+    background-color: black;
+    color: white;
+    position: absolute;
+    z-index: 0;
+    bottom: 0px;
+    right: 0px;
+    overflow-x: hidden;
+    transition: 0.5s;
+ 
+
+}
+.mailview::-webkit-scrollbar {
+     display: none;
+}
+.successtab{
+   height: 13%;
+    width: 0%;
+    background-color: limegreen;
+    color: white;
+    position: absolute;
+    z-index: 1;
+    bottom: 27px;
+    right: 0px;
+    overflow-x: hidden;
+    transition: 0.5s;
+    border-radius: 50px 0px 0px 50px;
+    font-size: 20px;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.successtab::-webkit-scrollbar {
+     display: none;
+}
+.sending{
+    height: 0px;
+    overflow-x: hidden;
+    transition: 0.2s;
+}
+.wrapper.one {
+    background-color: #1a1a1a00;
+  }
+  .drop-main {
+    display: flex;
+    font-size: 0rem;
+    justify-content: center;
+    font-family: "Russo One", sans-serif;
+  }
+  .d {
+    opacity: 0;
+    color: #ffffff;
+  }
+  .r {
+    opacity: 0;
+    color: #ffffff;
+  }
+  .o {
+    opacity: 0;
+    color: #ffffff;
+  }
+  .p {
+    opacity: 0;
+    color: #ffffff;
+  }
+  .s {
+    opacity: 0;
+    color: #fcfcfc;
+  }
+  .drop1 {
+    animation: drop 0.6s linear forwards;
+  }
+  .drop2 {
+    animation: drop 0.6s linear forwards 0.2s;
+  }
+  .drop3 {
+   animation: drop 0.6s linear forwards 0.4s;
+  }
+  .drop4 {
+    animation: drop 0.6s linear forwards 0.6s;
+  }
+  .drop5 {
+    animation: drop 0.6s linear forwards 0.8s;
+  }
+  @keyframes drop {
+    0% {
+      transform: translateY(-200px);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+    65% {
+      transform: translateY(-17px);
+      opacity: 1;
+    }
+    75% {
+      transform: translateY(-22px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+
+  .ring
+{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:100px;
+  height:100px;
+  background:transparent;
+  /* border:3px solid #3c3c3c; */
+  border-radius:50%;
+  text-align:center;
+  line-height:100px;
+  font-family:sans-serif;
+  font-size:9px;
+  color:#ffd22d;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  text-shadow:0 0 10px #90f7b1;
+  /* box-shadow:0 0 20px rgba(0,0,0,.5); */
+}
+.ring:before
+{
+  content:'';
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  border:3px solid transparent;
+  border-top:3px solid #00aeff;
+  border-right:3px solid #ff9d00;
+  border-radius:50%;
+  animation:animateC 2s linear infinite;
+}
+span
+{
+  display:block;
+  position:absolute;
+  top:calc(50% - 2px);
+  left:50%;
+  width:50%;
+  height:4px;
+  background:transparent;
+  transform-origin:left;
+  animation:animate 2s linear infinite;
+}
+span:before
+{
+  content:'';
+  position:absolute;
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  background:#9dff00;
+  top:-6px;
+  right:-8px;
+  box-shadow:0 0 20px #fff000;
+}
+@keyframes animateC
+{
+  0%
+  {
+    transform:rotate(0deg);
+  }
+  100%
+  {
+    transform:rotate(360deg);
+  }
+}
+@keyframes animate
+{
+  0%
+  {
+    transform:rotate(45deg);
+  }
+  100%
+  {
+    transform:rotate(405deg);
+  }
+}
+.loadingbox{
+  display: none;
+}

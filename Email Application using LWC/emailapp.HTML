@@ -1,0 +1,348 @@
+<template>
+	<div class="totalmain">
+		<div class="selector">
+			<div class="logo">
+				<img src={logo} style="width: 166px;height: 58px;">
+            </div>
+				<div class="pick">
+					<div class="icons">
+						<div style="margin:20px 0px;" onclick={handlemail} class="mailsec">
+
+							<lightning-icon icon-name="standard:email" size="medium" title="Mail"></lightning-icon>
+							<label>Mail</label>
+
+						</div>
+						<div style="margin:20px 0px;" onclick={handlecontact} class="consec">
+							<lightning-icon icon-name="standard:customers" size="medium" title="Contacts">
+							</lightning-icon>
+							<label style="font-size: 12px;">Contacts</label>
+						</div>
+						<div style="margin:20px 0px;" onclick={handleTask} class="tasksec">
+							<lightning-icon icon-name="standard:task2" size="medium" title="Task">
+							</lightning-icon>
+							<label style="font-size: 12px;">Task</label>
+						</div>
+						<div style="margin:20px 0px;" onclick={handlenotes} class="notesec">
+							<lightning-icon icon-name="standard:note" size="medium" title="Notes">
+							</lightning-icon>
+							<label style="font-size: 12px;">Notes</label>
+						</div>
+						<div style="margin:20px 0px;" onclick={handlebook} class="booksec">
+							<lightning-icon icon-name="standard:entity_milestone" size="medium" title="BookMark">
+							</lightning-icon>
+							<label style="font-size: 12px;">Bookmark</label>
+						</div>
+
+
+					</div>
+					<div class="sections">
+						<template if:true={mailtemp}>
+							<div style="margin: 10px 11px 11px 16px;">
+								<button class="slds-button slds-button_neutral slds-button_stretch newmail" onclick={opennewmail}>New Mail</button>
+							</div>
+							<div class="options">
+								<div class="streams">
+									<h1 onclick={stemopen}>STREAMS</h1>
+								</div>
+								<div class="streamsopen">
+									<h1 onclick={unreadmenu}>All Unread</h1>
+									<h1 onclick={Readmenu}>All Read</h1>
+
+								</div>
+								<div class="folders">
+									<h1 onclick={foldopen}>FOLDERS</h1>
+								</div>
+								<div class="folderopen">
+									<h1 onclick={inboxmenu}>Inbox</h1>
+									<h1 onclick={sendmenu}>Send</h1>
+									<h1 onclick={trashmenu}>Trash</h1>
+									<h1 onclick={spammenu}>Spam</h1>
+
+								</div>
+							</div>
+						</template>
+						<template if:true={contacttemp}>
+							<div class="divcon">
+								<h1>Under Construction...</h1>
+							</div>
+
+						</template>
+						<template if:true={tasktemp}>
+							<div class="divcon">
+								<h1>Under Construction...</h1>
+							</div>
+						</template>
+						<template if:true={notetemp}>
+							<div class="divcon">
+								<h1>Under Construction...</h1>
+							</div>
+						</template>
+
+						<template if:true={booktemp}>
+							<div class="divcon">
+								<h1>Under Construction...</h1>
+							</div>
+						</template>
+
+
+					</div>
+
+				</div>
+			</div>
+			<div class="display">
+				<div class="infobox">
+					<div>
+						<lightning-icon icon-name="action:user" size="small">
+						</lightning-icon>
+					</div>
+
+				</div>
+				<div class="buttonbox">
+					<div class="totmenu">
+						<div onclick={menuoption} class="menuopt">
+							<h1>{menuvalue}&nbsp;<lightning-icon icon-name="utility:chevrondown" size="xx-small">
+								</lightning-icon>
+							</h1>
+
+						</div>
+						<div class="menu">
+							<h1 onclick={inboxmenu}>Inbox</h1>
+							<h1 onclick={sendmenu}>Send</h1>
+							<h1 onclick={trashmenu}>Trash</h1>
+							<h1 onclick={spammenu}>Spam</h1>
+
+						</div>
+
+					</div>
+
+				</div>
+				<div class="loadingbox">
+					<div class="ring">Loading
+					<span></span>
+				</div>
+
+				</div>
+				
+				<div class="mailtable">
+					<template if:true={maillistview}>
+						<template for:each={maillist} for:item="mail">
+							<div key={mail.id} class="aligntable" data-id={mail.id} onclick={selectedMail}>
+								<!-- onclick={selectedMail} -->
+
+								<div class="checkboxlist">
+									<input type="checkbox" value="checkbox-unique-id-81" />
+                            </div>
+									<div class="align">
+										<div class="songname">
+											<h1 class="toname">{mail.name}</h1>&nbsp;&nbsp;{mail.to}
+										</div>
+										<div class="songMb">{mail.subject}</div>
+										<!-- <lightning-formatted-rich-text value={mail.}></lightning-formatted-rich-text> -->
+									</div>
+									<!-- <div class="threedots">
+									<div>
+										<lightning-icon class="threedoticon" icon-name="utility:threedots_vertical"
+											size="xx-small" onclick={handledots}>
+								</lightning-icon>
+									</div>
+									<div class="dotmenu">
+                                        <div>
+                                            <h1 style="padding-top: 2px;" onclick={inboxmenu}>delete</h1>
+                                        </div>
+                                        <div>
+                                            <lightning-icon class="threedoticon" icon-name="utility:close"
+											size="xx-small" onclick={closedots}>
+								</lightning-icon>
+                                        </div>
+							
+
+						</div>
+
+								</div> -->
+
+								</div>
+
+
+						</template>
+
+					</template>
+					<template if:true={mailreadlistview}>
+
+						<template for:each={mailreadlist} for:item="mail">
+							<div key={mail.id} class="aligntable" data-id={mail.id} onclick={selectedMail}>
+								<!-- onclick={selectedMail} -->
+
+								<div class="checkboxlist">
+									<input type="checkbox" value="checkbox-unique-id-81" />
+                            </div>
+									<div class="align">
+										<div class="songname">
+											<h1 class="toname">{mail.name}</h1>&nbsp;&nbsp;{mail.to}
+										</div>
+										<div class="songMb">{mail.subject}</div>
+										<!-- <lightning-formatted-rich-text value={mail.}></lightning-formatted-rich-text> -->
+									</div>
+									<!-- <div class="threedots">
+									<div>
+										<lightning-icon class="threedoticon" icon-name="utility:threedots_vertical"
+											size="xx-small" onclick={handledots}>
+								</lightning-icon>
+									</div>
+									<div class="dotmenu">
+                                        <div>
+                                            <h1 style="padding-top: 2px;" onclick={inboxmenu}>delete</h1>
+                                        </div>
+                                        <div>
+                                            <lightning-icon class="threedoticon" icon-name="utility:close"
+											size="xx-small" onclick={closedots}>
+								</lightning-icon>
+                                        </div>
+							
+
+						</div>
+
+								</div> -->
+
+								</div>
+
+
+						</template>
+					</template>
+
+
+				</div>
+				<div class="mailview">
+					<div>
+						<div class="onesec">
+							<div style="padding:10px">
+								<lightning-icon icon-name="utility:close" size="x-small" onclick={closemailview}>
+								</lightning-icon>
+							</div>
+						</div>
+						<div class="inputscontainer">
+							<div class="frominput">
+								<div class="text">
+									<h1>From : </h1>
+								</div>
+								<div class="datainput">
+									<p>{viewmailfrom}</p>
+								</div>
+
+							</div>
+							<div class="toinput">
+								<div class="text">
+									<h1>To : </h1>
+								</div>
+								<div class="datainput">
+									<h1>{viewmailtoadd}</h1>
+								</div>
+							</div>
+							<div class="ccinput">
+								<div class="text">
+									<h1>Cc : </h1>
+								</div>
+								<div class="datainput">
+									<h1>{viewmailCc}</h1>
+								</div>
+							</div>
+							<div class="subjectinput">
+								<div class="text">
+									<h1> Subject : </h1>
+								</div>
+								<div class="datainput">
+									<h1>{viewmailsub}</h1>
+								</div>
+							</div>
+							<div class="viewmailcontentinput">
+								<div>
+									<p>
+										<lightning-formatted-rich-text style="color: white;" value={viewmailBody}>
+										</lightning-formatted-rich-text>
+									</p>
+								</div>
+
+							</div>
+
+
+						</div>
+					</div>
+
+				</div>
+
+				<div class="composemail">
+					<div class="newmailcontainer">
+						<div class="onesec">
+							<div class="sendbtn" onclick={sendemail} disabled={disablebtn}>
+								<h1 style="padding:1px">
+									Send&nbsp;
+									<lightning-icon class="sendicon" icon-name="utility:send" size="x-small">
+									</lightning-icon>
+								</h1>
+							</div>
+							<div style="padding:10px">
+								<lightning-icon icon-name="utility:close" size="x-small" onclick={closedots}>
+								</lightning-icon>
+							</div>
+						</div>
+						<div class="inputscontainer">
+							<div class="frominput">
+								<div class="text">
+									<h1>From : </h1>
+								</div>
+								<div class="datainput">
+									<p>mockrissuppor@gmail.com</p>
+								</div>
+
+							</div>
+							<div class="toinput">
+								<div class="text">
+									<h1>To : </h1>
+								</div>
+								<div class="datainput">
+									<input type="text" class="slds-input" value={toaddressmail} onchange={toAddressInput} />
+                            </div>
+								</div>
+								<div class="ccinput">
+									<div class="text">
+										<h1>Cc : </h1>
+									</div>
+									<div class="datainput">
+										<input type="text" class="slds-input" onchange={ccAddressInput}/>
+                            </div>
+									</div>
+									<div class="subjectinput">
+										<div class="datainput">
+											<input type="text" class="slds-input" value={subjectinsertmail}  placeholder="Subject" onchange={subjectinsertInput}/>
+                            </div>
+										</div>
+										<div class="mailcontentinput">
+											<div>
+												<textarea id="textarea-id-01" placeholder="Write your text…" class="slds-textarea"  value={bodyinsertmail} onchange={bodyinsertInput}></textarea>
+											</div>
+
+										</div>
+
+									</div>
+
+
+
+								</div>
+
+							</div>
+							<div class="successtab">
+								<div class="wrapper one">
+									<div class="drop-main">
+										<div class="d">S</div>
+										<div class="r">E</div>
+										<div class="o">N</div>
+										<div class="p">D</div>
+										<div class="s">&#10004;</div>
+									</div>
+									<div class="closetext"></div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+</template>
